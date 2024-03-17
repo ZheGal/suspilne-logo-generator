@@ -16,9 +16,18 @@
         <div class="text-right w-[120px]">Колір:</div>
         <input type="color" v-model="color" />
       </label>
+      <label class="main-label">
+        <div class="text-right w-[120px]">Зображення:</div>
+        <input type="file" @change="imageChange" />
+      </label>
     </div>
     <hr class="my-4 border-black/30" />
-    <Logo :firstLine="firstLine" :secondLine="secondLine" :roundColor="color" />
+    <Logo
+      :firstLine="firstLine"
+      :secondLine="secondLine"
+      :roundColor="color"
+      :imageUrl="imageUrl"
+    />
   </div>
 </template>
 
@@ -29,6 +38,16 @@ import Logo from "./components/Logo.vue";
 const firstLine = ref<string>("Суспільне");
 const secondLine = ref<string>("Новини");
 const color = ref<string>("#FBED21");
+const imageUrl = ref<string>(null);
+
+function imageChange(event) {
+  const selectedFile = event.target.files[0];
+  if (selectedFile) {
+    imageUrl.value = URL.createObjectURL(selectedFile);
+  } else {
+    imageUrl.value = "";
+  }
+}
 </script>
 
 <style lang="css" scoped>

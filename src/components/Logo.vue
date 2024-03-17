@@ -1,7 +1,13 @@
 <template>
   <div class="logo">
     <div class="logo_inner">
-      <div class="logo_round"></div>
+      <div class="logo_round">
+        <img
+          :src="imageUrl"
+          v-if="imageUrl"
+          class="object-cover h-full w-full"
+        />
+      </div>
       <div class="logo_text">
         <div v-if="firstLine">{{ firstLine }}</div>
         <div v-if="secondLine">{{ secondLine }}</div>
@@ -15,6 +21,7 @@ defineProps<{
   firstLine?: string;
   secondLine?: string;
   roundColor?: string;
+  imageUrl?: string;
 }>();
 </script>
 
@@ -32,7 +39,7 @@ defineProps<{
 }
 
 .logo_round {
-  @apply aspect-[1/2] min-w-[60px] max-w-[60px] bg-[v-bind(roundColor)] rounded-l-full;
+  @apply aspect-[1/2] min-w-[60px] max-w-[60px] bg-[v-bind(roundColor)] rounded-l-full overflow-hidden;
 }
 
 .logo_text {
