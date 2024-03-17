@@ -21,7 +21,7 @@ defineProps<{
 <style lang="css" scoped>
 .logo {
   @apply flex items-center justify-center;
-  @apply font-['Inerta'] font-black py-12 px-2;
+  @apply font-['Inerta-Bold'] font-black py-12 px-2;
   @apply rounded-xl border bg-slate-700 text-white uppercase;
   @apply pointer-events-none select-none;
 }
