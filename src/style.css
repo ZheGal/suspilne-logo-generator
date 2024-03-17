@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Inerta-Bold";
+  src: url("/public/fonts/Inerta-Bold.woff2") format("woff2"),
+    url("/public/fonts/Inerta-Bold.woff") format("woff");
+}
