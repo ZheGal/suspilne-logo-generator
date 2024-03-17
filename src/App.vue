@@ -28,6 +28,16 @@
       :roundColor="color"
       :imageUrl="imageUrl"
     />
+    <hr class="my-4 border-black/30" />
+    <div class="text-left">
+      <a
+        href="https://t.me/UkrMediaGlory"
+        target="_blank"
+        class="text-blue-600 italic underline"
+      >
+        @UkrMediaGlory
+      </a>
+    </div>
   </div>
 </template>
 
